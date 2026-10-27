@@ -33,7 +33,7 @@ function render(){const S=D.sections.find(s=>s.id===cur);
  $("#tabs").innerHTML=cat("all",t("all"),t("allSub"),"",D.sections.reduce((n,s)=>n+cnt(s),0),cur==="all")+D.sections.map(s=>cat(s.id,tr(s,"title"),tr(s,"desc"),s.image.url,cnt(s),s.id===cur)).join("");
  $("#subtabs").innerHTML=S&&S.subs.length?tab("all",t("allShort"),sub==="all","s")+S.subs.map(b=>tab(b.id,tr(b,"title"),b.id===sub,"s")).join(""):"";
  L=list();
- $("#grid").innerHTML=L.length?L.map((x,i)=>{const th=x.thumb||(x.type==="image"?x.url:"")||(ytId(x.url)?`https://img.youtube.com/vi/${ytId(x.url)}/maxresdefault.jpg`:"")||"assets/logo.svg";
+ $("#grid").innerHTML=L.length?L.map((x,i)=>{const th=x.thumb||(x.type==="image"?x.url:"")||(ytId(x.url)?`https://img.youtube.com/vi/${ytId(x.url)}/maxresdefault.jpg`:"")||"assets/signature.png";
   return `<button class="card" style="animation-delay:${i*70}ms" data-k="${i}"><div class="ph"><img loading="lazy" src="${esc(th)}" alt="${esc(tr(x,"title"))}"></div><div class="meta"><span>${esc(x.cat)}</span><span>${x.type==="video"?"▶ ":""}${esc(x.sub)}</span></div><h3>${esc(tr(x,"title"))}</h3><p>${esc(tr(x,"desc"))}</p></button>`}).join(""):`<p class="empty">${t("empty")}</p>`}
 function media(x){const u=x.url||"";let m;
  if(m=u.match(/(?:youtu\.be\/|v=|embed\/)([\w-]{11})/))return `<iframe src="https://www.youtube.com/embed/${m[1]}" allow="encrypted-media;fullscreen" allowfullscreen></iframe>`;

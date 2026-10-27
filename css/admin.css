@@ -57,3 +57,9 @@ html[dir=rtl] .vbars{direction:ltr}
 html[dir=rtl] .th{direction:ltr}
 
 @media(max-width:480px){.top{gap:8px;padding-inline:10px}.acts{gap:0}.lnk{font-size:.76rem;padding:8px 5px}.langbtn{padding:6px 10px!important}.ttl{font-size:1rem}}
+
+.sig{display:block;aspect-ratio:1203/322;background:linear-gradient(105deg,#8E6B25 0%,#C9A24B 28%,#F3DFA6 43%,#FFF8DC 50%,#F3DFA6 57%,#C9A24B 72%,#8E6B25 100%);background-size:260% 100%;-webkit-mask:url(../assets/signature.png) center/contain no-repeat;mask:url(../assets/signature.png) center/contain no-repeat;animation:sheen 3.4s linear infinite}
+@keyframes sheen{from{background-position:160% 0}to{background-position:-60% 0}}
+.lg{width:100px;flex:none}
+.loginsig{width:min(70vw,240px);margin-inline:auto}
+@media(max-width:480px){.lg{width:72px}}

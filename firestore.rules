@@ -1,0 +1,25 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      // Replace with the admin email you create in Firebase Authentication
+      return request.auth != null && request.auth.token.email == "YOUR_ADMIN_EMAIL";
+    }
+    match /site/{doc} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    // Visit counter: visitors may only add +1 to the totals, only the admin can read.
+    match /stats/{doc} {
+      allow read: if isAdmin();
+      allow create: if request.resource.data.total == 1
+        && request.resource.data.unique in [0, 1]
+        && request.resource.data.keys().hasOnly(['total', 'unique', 'days']);
+      allow update: if request.resource.data.diff(resource.data).affectedKeys().hasOnly(['total', 'unique', 'days'])
+        && request.resource.data.total == resource.data.total + 1
+        && request.resource.data.unique >= resource.data.unique
+        && request.resource.data.unique <= resource.data.unique + 1;
+      allow delete: if isAdmin();
+    }
+  }
+}

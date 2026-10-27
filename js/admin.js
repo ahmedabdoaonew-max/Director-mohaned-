@@ -1,4 +1,4 @@
-import {load,save,login,logout,onAuth,isCloud,uid,blankImg,norm,loadStats,dayKey} from "./store.js?v=7";
+import {load,save,login,logout,onAuth,isCloud,uid,blankImg,norm,loadStats,dayKey} from "./store.js?v=8";
 const $=s=>document.querySelector(s);
 let S,dirty=false,R=null,draft=null,cur=null;
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -134,8 +134,8 @@ document.addEventListener("click",async e=>{const b=e.target.closest("[data-a]")
 addEventListener("hashchange",()=>{if(S)render()});
 $("#out").onclick=async()=>{if(dirty&&!confirm("You have unsaved changes. Sign out anyway?"))return;dirty=false;await logout();location.reload()};
 $("#loginForm").onsubmit=async e=>{e.preventDefault();$("#err").textContent="";try{await login(window.ADMIN_EMAIL||$("#email").value,$("#pw").value)
- if(!isCloud())start()}catch(x){$("#err").textContent=x.message.replace("Firebase: ","")}};
+ if(!isCloud())start()}catch(x){$("#err").textContent=/auth\//.test(x.message)?(/network/.test(x.message)?"No connection":/operation-not-allowed/.test(x.message)?"Email/Password sign-in is not enabled in Firebase":"Wrong password"):x.message}};
 addEventListener("beforeunload",e=>{if(dirty)e.preventDefault()});
 async function start(){S=await load();$("#loginView").hidden=true;$("#app").hidden=false;render()}
-if(!isCloud()||window.ADMIN_EMAIL){$("#emailRow").hidden=true;$("#pwLabel").textContent="Admin code";$("#pw").setAttribute("inputmode","numeric");$("#pw").setAttribute("autocomplete","off")}
+if(!isCloud()||window.ADMIN_EMAIL){$("#emailRow").hidden=true;$("#pwLabel").textContent="Password"}
 onAuth(u=>u?start():($("#app").hidden=true,$("#loginView").hidden=false));

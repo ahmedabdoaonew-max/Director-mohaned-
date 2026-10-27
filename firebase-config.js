@@ -1,14 +1,14 @@
-// Paste your Firebase web config here (Firebase console > Project settings > Your apps).
-// Leave as null to run in local demo mode (data saved only in this browser).
-window.FIREBASE_CONFIG = null;
-/* Example:
-window.FIREBASE_CONFIG = { apiKey:"...", authDomain:"...", projectId:"...", appId:"...", };
-*/
+// Firebase web config (project: mohaned-9bfb1).
+// This config is public by design; security comes from firestore.rules, not from hiding these values.
+window.FIREBASE_CONFIG = {
+  apiKey: "AIzaSyBuporBPTQ3jOKt-oXMckVMiZIBzRw1zhI",
+  authDomain: "mohaned-9bfb1.firebaseapp.com",
+  projectId: "mohaned-9bfb1",
+  storageBucket: "mohaned-9bfb1.firebasestorage.app",
+  messagingSenderId: "975693267423",
+  appId: "1:975693267423:web:010daf617dce2e1db7446a",
+  measurementId: "G-604B7FYXEH"
+};
 
-// Cloud mode: the admin email you created in Firebase Authentication.
-// When set, the dashboard asks for the code only (the code = that user's password).
+// Leave empty: the dashboard asks for email + password (the Firebase Authentication user).
 window.ADMIN_EMAIL = "";
-
-// Local demo mode only. This file is public, so DELETE this line once Firebase is on
-// and never reuse this code as your Firebase password while it stays here.
-window.LOCAL_ADMIN_CODE = "258369";

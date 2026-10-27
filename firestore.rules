@@ -2,8 +2,8 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     function isAdmin() {
-      // Replace with the admin email you create in Firebase Authentication
-      return request.auth != null && request.auth.token.email == "YOUR_ADMIN_EMAIL";
+      // The admin user created in Firebase Authentication
+      return request.auth != null && request.auth.token.email == "n@gmail.com";
     }
     match /site/{doc} {
       allow read: if true;

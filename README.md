@@ -4,9 +4,9 @@ Static site (no build step). Public page: `index.html`. Dashboard: `admin.html`.
 
 ## 1. Firebase (data + admin login)
 1. console.firebase.google.com > create project > add a Web app > copy the config into `firebase-config.js`.
-2. Build > Authentication > enable Email/Password > add your admin user.
+2. Build > Authentication > enable Email/Password > add your admin user (email + password); you sign in to the dashboard with them.
 3. Build > Firestore Database > create (production mode).
-4. In `firestore.rules` replace YOUR_ADMIN_EMAIL with that email.
+4. `firestore.rules` already uses `n@gmail.com` (lowercase, as Firebase stores it); publish it in Firestore > Rules.
 5. Authentication > Settings > Authorized domains: add your Vercel domain.
 6. `npm i -g firebase-tools && firebase login && firebase init` (use existing firebase.json) then `firebase deploy --only firestore:rules,hosting`
 

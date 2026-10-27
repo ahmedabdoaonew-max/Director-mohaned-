@@ -6,17 +6,18 @@
 <title>Mohand Lotfy | Film & Commercial Director</title>
 <meta name="description" content="Cinematic films, commercials and visual storytelling.">
 <meta name="theme-color" content="#050505">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="preload" as="image" href="assets/signature.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,500;0,700;1,500&family=Manrope:wght@400;600;800&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=7">
+<link rel="stylesheet" href="css/style.css?v=9">
 <script>try{var l=localStorage.getItem("mlang")==="ar"?"ar":"en";document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr"}catch(e){}</script>
 </head>
 <body>
 <div class="progress" id="progress"></div>
 <header class="topbar" id="topbar">
-  <a href="admin.html" class="logo" aria-label="Dashboard"><img src="assets/logo.svg" alt="M logo"></a>
+  <a href="admin.html" class="logo" aria-label="Dashboard"><span class="sig " role="img" aria-label="Mohand Lotfy"></span></a>
   <nav class="nav" id="nav">
     <a href="#home" data-i="nHome">Home</a><a href="#work" data-i="nWork">Work</a><a href="#about" data-i="nAbout">About</a><a href="#services" data-i="nServices">Services</a><a href="#contact" data-i="nContact">Contact</a>
   </nav>
@@ -28,10 +29,7 @@
 <section class="hero" id="home">
   <div class="hero-bg" data-bgimg="hero" style="background-image:url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1800&q=80')"></div>
   <div class="hero-inner">
-    <svg class="hero-m" viewBox="0 0 120 120" fill="none" aria-hidden="true">
-      <circle cx="60" cy="60" r="56" pathLength="1"/>
-      <path d="M30 88V32l30 36 30-36v56" pathLength="1"/>
-    </svg>
+    <span class="sig hero-sig" role="img" aria-label="Mohand Lotfy"></span>
     <p class="eyebrow" data-i="director">Director Mohand Lotfy</p>
     <h1 data-ih="h1">Stories shot to be <em>felt</em>.</h1>
     <p data-i="heroP">Films, commercials and campaigns with a strong cinematic identity.</p>
@@ -80,7 +78,7 @@
 </section>
 </main>
 
-<footer class="footer"><img src="assets/logo.svg" alt="" width="36" height="36"><span data-i="foot">© 2026 Mohand Lotfy. All rights reserved.</span></footer>
+<footer class="footer"><span class="sig foot-sig" aria-hidden="true"></span><span data-i="foot">© 2026 Mohand Lotfy. All rights reserved.</span></footer>
 <div class="fab" id="fab" hidden>
   <a id="fabWa" target="_blank" rel="noopener" aria-label="WhatsApp" hidden><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.1.82.83-3.03-.2-.31a8.2 8.2 0 1 1 6.95 3.84Zm4.5-6.13c-.25-.12-1.46-.72-1.69-.8-.22-.08-.39-.12-.55.13-.16.25-.63.8-.78.96-.14.17-.29.19-.54.06a6.7 6.7 0 0 1-3.3-2.88c-.25-.43.25-.4.72-1.33.08-.16.04-.3-.02-.43-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.3-.22.25-.86.84-.86 2.05s.88 2.38 1 2.55c.12.16 1.73 2.64 4.2 3.7 1.56.67 2.17.73 2.95.62.48-.07 1.46-.6 1.67-1.17.2-.58.2-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg></a>
   <a id="fabFb" target="_blank" rel="noopener" aria-label="Facebook" hidden><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.52l.38-2.93H13.5V8.7c0-.85.24-1.43 1.45-1.43h1.55V4.65A20.6 20.6 0 0 0 14.24 4.5c-2.23 0-3.76 1.36-3.76 3.86v2.21H7.95v2.93h2.53V21h3.02Z"/></svg></a>
@@ -98,6 +96,6 @@ l.addEventListener('click',function(e){e.preventDefault();set(false);l.classList
 })();
 </script>
 <script src="firebase-config.js"></script>
-<script type="module" src="js/main.js?v=7"></script>
+<script type="module" src="js/main.js?v=8"></script>
 </body>
 </html>
